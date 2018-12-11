@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Verisetini çağıralım.
-dataset=pd.read_csv('C:/Users/user/Desktop/Credit_Card_Applications.csv')
+dataset=pd.read_csv('Credit_Card_Applications.csv')
 X=dataset.iloc[:,:-1].values
 y=dataset.iloc[:,-1].values
 
@@ -19,7 +19,6 @@ som=MiniSom(x=10, y=10, input_len=15,sigma=1.0,learning_rate=0.5)
 som.random_weights_init(X)
 som.train_random(data=X,num_iteration=100)
 
-# Sonuçları görselleştirelim.
 from pylab import bone, pcolor, colorbar, plot, show
 bone()
 pcolor(som.distance_map().T)
